@@ -1,5 +1,5 @@
 #encoding: utf-8
-source 'http://housekeeper.joowing.com:8080'
+source 'http://ruby.taobao.org'
 
 gem 'mongo'
 gem 'rack'
