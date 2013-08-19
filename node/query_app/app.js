@@ -5,8 +5,8 @@
 var MongoClient = require('mongodb').MongoClient;
 var format = require('util').format;
 
-var url = 'mongodb://mongoone.joowing.com:40000,mongotwo.joowing.com:40000,mongothree.joowing.com:40000';
-url += '/data_ocean_production_test_env';
+var url = 'mongodb://192.168.10.223:27017';
+url += '/data';
 
 var express = require('express');
 var routes = require('./routes');
@@ -46,14 +46,5 @@ MongoClient.connect(url, function (err, db) {
     http.createServer(app).listen(app.get('port'), function () {
         console.log('Express server listening on port ' + app.get('port'));
     });
-    http.createServer(app).listen(3001, function () {
-            console.log('Express server listening on port ' + app.get('port'));
-        });
-    http.createServer(app).listen(3002, function () {
-            console.log('Express server listening on port ' + app.get('port'));
-        });
-    http.createServer(app).listen(3003, function () {
-            console.log('Express server listening on port ' + app.get('port'));
-        });
 
 });
