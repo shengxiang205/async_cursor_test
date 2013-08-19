@@ -1,0 +1,34 @@
+GEM
+  remote: http://housekeeper.joowing.com:8080/
+  specs:
+    bson (1.9.0)
+    bson_ext (1.9.0)
+      bson (~> 1.9.0)
+    eventmachine (1.0.3)
+    kgio (2.8.0)
+    mongo (1.9.0)
+      bson (~> 1.9.0)
+    rack (1.5.2)
+    rainbows (4.5.0)
+      kgio (~> 2.5)
+      rack (~> 1.1)
+      unicorn (~> 4.6, >= 4.6.2)
+    raindrops (0.10.0)
+    rake (10.0.4)
+    ruby-prof (0.11.2)
+    unicorn (4.6.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bson_ext
+  eventmachine
+  mongo
+  rack
+  rainbows
+  rake
+  ruby-prof
