@@ -24,14 +24,14 @@ class Api
 
     if request.path =~ /profile/
       text = StringIO.new
-      result = RubyProf.stop
-      RubyProf::GraphHtmlPrinter.new(result).print(text)
-      RubyProf.start
+      # result = RubyProf.stop
+      # RubyProf::GraphHtmlPrinter.new(result).print(text)
+      # RubyProf.start
       [200, {}, [ text.string ]]
     else
       cursor = $db['data'].find(
           { :creator => 'mango_portal@joowing.com', :as => 'task_state_log' }
-      ).limit(113)
+      ).limit(1)
 
       # puts Thread.list.inspect
 
@@ -47,6 +47,6 @@ class Api
   end
 end
 
-RubyProf.start
+# RubyProf.start
 
 run Api
