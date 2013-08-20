@@ -1,5 +1,5 @@
 GEM
-  remote: http://housekeeper.joowing.com:8080/
+  remote: http://ruby.taobao.org/
   specs:
     bson (1.9.0)
     bson_ext (1.9.0)
