@@ -31,7 +31,7 @@ class Api
     else
       cursor = $db['data'].find(
           { :creator => 'mango_portal@joowing.com', :as => 'task_state_log' }
-      ).limit(113)
+      ).limit(1)
 
       # puts Thread.list.inspect
 
