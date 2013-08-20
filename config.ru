@@ -24,10 +24,12 @@ class Api
 
     if request.path =~ /profile/
       text = StringIO.new
-      # result = RubyProf.stop
-      # RubyProf::GraphHtmlPrinter.new(result).print(text)
-      # RubyProf.start
+      result = RubyProf.stop
+      RubyProf::GraphHtmlPrinter.new(result).print(text)
+      RubyProf.start
       [200, {}, [ text.string ]]
+    elsif request.path =~ /gc/
+      [200, {}, [ JSON.dump(GC.stat) ]]
     else
       cursor = $db['data'].find(
           { :creator => 'mango_portal@joowing.com', :as => 'task_state_log' }
@@ -47,6 +49,7 @@ class Api
   end
 end
 
-# RubyProf.start
+RubyProf.measure_mode = RubyProf::GC_RUNS
+RubyProf.start
 
 run Api
